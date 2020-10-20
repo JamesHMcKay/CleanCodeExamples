@@ -19,14 +19,13 @@ load_data <- function(filename, col_names) {
   return(data)
 }
 
-load_occupation_data <- function() {
-  occupation_data <- load_data(
-    "data/occupation-2018-census-csv.csv",
-    col_names = c("code", "occupation", "count")
-  )
+get_most_common_row_by_count <- function(occupation_data) {
+  index <- which(occupation_data$count == max(occupation_data$count))
+  return(occupation_data[index,])
 }
 
-find_most_common_occuptation <- function(occupation_data) {
-  index <- which(occupation_data$count == max(occupation_data$count))
-  return(occupation_data[index, ])
+get_most_common_occupation <- function() {
+  occupation_data <- load_data("data/occupation-2018-census-csv.csv", col_names = c("code", "occupation", "count"))
+  most_common_value <- get_most_common_row_by_count(occupation_data)
+  return (most_common_value)
 }
