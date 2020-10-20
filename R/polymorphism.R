@@ -21,4 +21,3 @@ get_operator.condition_equal <- function(obj) {
 get_operator.condition_range <- function(obj) {
   return("range")
 }
-
