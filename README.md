@@ -1,4 +1,7 @@
 # Clean code for statistical production
+
+This project is a work in progress, there are not any decent code and test examples yet, but the bulk of the document below is complete.
+
 ## Introduction
 This document presents a course in writing code that is maintainable, robust and easy for others to understand.  The principles are based on those presented elsewhere, such as Clean Code by Robert C. Martin or Refactoring by Martin Fowler, but with adaptations to languages used by data analysts (such as R and Python). This is not an exhaustive course on the matter but a starter on writing better code.
 
@@ -169,6 +172,8 @@ To load the data from a file we read from csv.
 
 ## Comments
 
+_Comments mean I have to read everything twice._****
+
 Comments are added with the best intentions but are hardly ever the right thing to do.  To quote Robert Martin’s Clean Code:
 
 The proper use of comments is to compensate for our failure to express ourself in code… Comments are always failures. We must have them because we cannot always figure out how to express ourselves without them, but their use is not a cause for celebration.
@@ -189,15 +194,6 @@ Documentation is not commenting.  Documentation is intended to describe the use 
 There are some cases where it is simply not possible to make the code any clearer.  In these cases.
 
 Here is an example from my own code that could have done with a comment:
-some_variable_clean <- gsub(
-  "\\s*\\([^\\)]+\\)",
-  "",
-  some_variable
-)
-
-This isn’t immediately clear what the regex is doing.  It might be worth adding a comment:
-
-# remove any text within rounded brackets
 ```python
 some_variable_clean <- gsub(
   "\\s*\\([^\\)]+\\)",
@@ -205,7 +201,16 @@ some_variable_clean <- gsub(
   some_variable
 )
 ```
+This isn’t immediately clear what the regex is doing.  It might be worth adding a comment:
 
+```python
+# remove any text within rounded brackets
+some_variable_clean <- gsub(
+  "\\s*\\([^\\)]+\\)",
+  "",
+  some_variable
+)
+```
 
 ### Explanatory comments
 
