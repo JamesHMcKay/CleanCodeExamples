@@ -172,7 +172,7 @@ To load the data from a file we read from csv.
 
 ## Comments
 
-_Comments mean I have to read everything twice._****
+**_Comments mean I have to read everything twice_**
 
 Comments are added with the best intentions but are hardly ever the right thing to do.  To quote Robert Martin’s Clean Code:
 
